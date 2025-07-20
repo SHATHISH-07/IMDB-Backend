@@ -53,6 +53,11 @@ mongoose
     logger.error("error connecting to MongoDB:", error.message);
   });
 
+app.get("/ping", (req, res) => {
+  console.log("Ping received at " + new Date());
+  res.send("pong");
+});
+
 // user, login, watchList
 app.use("/api/users", userRouter);
 app.use("/api/login", loginRouter);
